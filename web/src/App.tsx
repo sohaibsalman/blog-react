@@ -1,5 +1,7 @@
+import { Navbar } from "./components/Navbar";
+
 const App: React.FC = () => {
-  return <h1>Blog Website</h1>;
+  return <Navbar />;
 };
 
 export default App;
