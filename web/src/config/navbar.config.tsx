@@ -1,4 +1,6 @@
 const config = {
+  backgroundColor: "black",
+  fontColor: "white",
   brand: {
     name: "Sohaib Salman",
     render: () => {
@@ -31,9 +33,18 @@ const config = {
     render: () => {
       return (
         <div className="hamburger">
-          <span className="bar"></span>
-          <span className="bar"></span>
-          <span className="bar"></span>
+          <span
+            className="bar"
+            style={{ backgroundColor: config.fontColor }}
+          ></span>
+          <span
+            className="bar"
+            style={{ backgroundColor: config.fontColor }}
+          ></span>
+          <span
+            className="bar"
+            style={{ backgroundColor: config.fontColor }}
+          ></span>
         </div>
       );
     },

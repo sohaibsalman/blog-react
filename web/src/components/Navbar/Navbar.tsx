@@ -12,7 +12,11 @@ const AppNavbar = () => {
     : config.brand.name;
 
   const renderedLinks = config.links.map((link) => (
-    <Nav.Link key={link.route} href={link.route}>
+    <Nav.Link
+      key={link.route}
+      href={link.route}
+      style={{ color: config.fontColor }}
+    >
       {link.label}
     </Nav.Link>
   ));
@@ -24,9 +28,15 @@ const AppNavbar = () => {
       : null;
 
   return (
-    <Navbar bg="light" expand={"lg"} className="mb-3">
+    <Navbar
+      expand={"lg"}
+      className="mb-3"
+      style={{ backgroundColor: config.backgroundColor }}
+    >
       <Container fluid>
-        <Navbar.Brand href="#">{brand}</Navbar.Brand>
+        <Navbar.Brand href="#" style={{ color: config.fontColor }}>
+          {brand}
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-lg`}>
           {toggleButton}
         </Navbar.Toggle>
@@ -34,6 +44,7 @@ const AppNavbar = () => {
           id={`offcanvasNavbar-expand-lg`}
           aria-labelledby={`offcanvasNavbarLabel-expand-lg`}
           placement="end"
+          style={{ backgroundColor: config.backgroundColor }}
         >
           <Offcanvas.Header closeButton />
           <Offcanvas.Body>
