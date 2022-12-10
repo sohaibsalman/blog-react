@@ -1,12 +1,16 @@
+import { useRef } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Offcanvas from "react-bootstrap/Offcanvas";
 
+import CloseButton from "../CloseButton";
+
 import "./navbar.css";
 import config from "../../config/navbar.config";
 
 const AppNavbar = () => {
+  const closeBtnRef = useRef<HTMLDivElement>(null);
   const brand = Object.hasOwn(config.brand, "render")
     ? config.brand.render()
     : config.brand.name;
@@ -21,11 +25,16 @@ const AppNavbar = () => {
     </Nav.Link>
   ));
 
-  const toggleButton =
-    Object.hasOwn(config, "toggleButton") &&
-    Object.hasOwn(config.toggleButton, "render")
-      ? config.toggleButton.render()
-      : null;
+  const toggleButton = Object.hasOwn(config, "toggleButton")
+    ? config.toggleButton()
+    : null;
+
+  const handleCloseButtonClick = () => {
+    const bootstrapCloseBtn = closeBtnRef.current?.querySelector(
+      ".btn-close"
+    ) as HTMLButtonElement;
+    bootstrapCloseBtn.click();
+  };
 
   return (
     <Navbar
@@ -46,7 +55,12 @@ const AppNavbar = () => {
           placement="end"
           style={{ backgroundColor: config.backgroundColor }}
         >
-          <Offcanvas.Header closeButton />
+          <Offcanvas.Header closeButton ref={closeBtnRef}>
+            <CloseButton
+              onClick={handleCloseButtonClick}
+              color={config.fontColor}
+            />
+          </Offcanvas.Header>
           <Offcanvas.Body>
             <Nav className="justify-content-end flex-grow-1 pe-3">
               {renderedLinks}

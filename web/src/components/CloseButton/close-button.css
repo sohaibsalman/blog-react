@@ -1,0 +1,23 @@
+.close-bar {
+  position: absolute;
+  width: 25px;
+  height: 2px;
+}
+
+.close-bar:nth-child(1) {
+  transform: rotate(45deg);
+}
+
+.close-bar:nth-child(2) {
+  transform: rotate(135deg);
+}
+
+.close-button {
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: inherit;
+}

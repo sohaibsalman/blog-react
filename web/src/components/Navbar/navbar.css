@@ -27,3 +27,6 @@
 .bar:not(:last-child) {
   margin-bottom: 4px;
 }
+.offcanvas-header .btn-close {
+  display: none;
+}

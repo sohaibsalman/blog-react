@@ -29,25 +29,23 @@ const config = {
       route: "/contact",
     },
   ],
-  toggleButton: {
-    render: () => {
-      return (
-        <div className="hamburger">
-          <span
-            className="bar"
-            style={{ backgroundColor: config.fontColor }}
-          ></span>
-          <span
-            className="bar"
-            style={{ backgroundColor: config.fontColor }}
-          ></span>
-          <span
-            className="bar"
-            style={{ backgroundColor: config.fontColor }}
-          ></span>
-        </div>
-      );
-    },
+  toggleButton: () => {
+    return (
+      <div className="hamburger">
+        <span
+          className="bar"
+          style={{ backgroundColor: config.fontColor }}
+        ></span>
+        <span
+          className="bar"
+          style={{ backgroundColor: config.fontColor }}
+        ></span>
+        <span
+          className="bar"
+          style={{ backgroundColor: config.fontColor }}
+        ></span>
+      </div>
+    );
   },
 };
 
