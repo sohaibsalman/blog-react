@@ -17,11 +17,19 @@ const AppNavbar = () => {
     </Nav.Link>
   ));
 
+  const toggleButton =
+    Object.hasOwn(config, "toggleButton") &&
+    Object.hasOwn(config.toggleButton, "render")
+      ? config.toggleButton.render()
+      : null;
+
   return (
     <Navbar bg="light" expand={"lg"} className="mb-3">
       <Container fluid>
         <Navbar.Brand href="#">{brand}</Navbar.Brand>
-        <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-lg`} />
+        <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-lg`}>
+          {toggleButton}
+        </Navbar.Toggle>
         <Navbar.Offcanvas
           id={`offcanvasNavbar-expand-lg`}
           aria-labelledby={`offcanvasNavbarLabel-expand-lg`}
