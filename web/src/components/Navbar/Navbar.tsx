@@ -2,6 +2,7 @@ import { useRef } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+import { NavLink } from "react-router-dom";
 import Offcanvas from "react-bootstrap/Offcanvas";
 
 import CloseButton from "../CloseButton";
@@ -21,8 +22,9 @@ const AppNavbar = () => {
 
   const renderedLinks = config.links.map((link) => (
     <Nav.Link
+      as={NavLink}
+      to={link.route}
       key={link.route}
-      href={link.route}
       style={{ color: theme.fontColorPrimary }}
     >
       {link.label}
