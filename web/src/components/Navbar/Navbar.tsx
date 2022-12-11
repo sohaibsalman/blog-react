@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useState } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
@@ -12,13 +12,16 @@ import { config } from "../../config/navbar.config";
 import "./navbar.css";
 
 const AppNavbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
   const theme = useThemeContext();
-
-  const closeBtnRef = useRef<HTMLDivElement>(null);
 
   const brand = Object.hasOwn(config.brand, "render")
     ? config.brand.render()
     : config.brand.name;
+
+  const handleMenuClose = () => {
+    setMenuOpen(false);
+  };
 
   const renderedLinks = config.links.map((link) => (
     <Nav.Link
@@ -26,6 +29,7 @@ const AppNavbar = () => {
       to={link.route}
       key={link.route}
       style={{ color: theme.fontColorPrimary }}
+      onClick={handleMenuClose}
     >
       {link.label}
     </Nav.Link>
@@ -34,13 +38,6 @@ const AppNavbar = () => {
   const toggleButton = Object.hasOwn(config, "toggleButton")
     ? config.toggleButton()
     : null;
-
-  const handleCloseButtonClick = () => {
-    const bootstrapCloseBtn = closeBtnRef.current?.querySelector(
-      ".btn-close"
-    ) as HTMLButtonElement;
-    bootstrapCloseBtn.click();
-  };
 
   return (
     <Navbar
@@ -52,7 +49,10 @@ const AppNavbar = () => {
         <Navbar.Brand href="#" style={{ color: theme.fontColorPrimary }}>
           {brand}
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-lg`}>
+        <Navbar.Toggle
+          aria-controls={`offcanvasNavbar-expand-lg`}
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
           {toggleButton}
         </Navbar.Toggle>
         <Navbar.Offcanvas
@@ -60,10 +60,13 @@ const AppNavbar = () => {
           aria-labelledby={`offcanvasNavbarLabel-expand-lg`}
           placement="end"
           style={{ backgroundColor: theme.colorPrimary }}
+          restoreFocus={false}
+          show={menuOpen}
+          onHide={() => setMenuOpen(false)}
         >
-          <Offcanvas.Header closeButton ref={closeBtnRef}>
+          <Offcanvas.Header>
             <CloseButton
-              onClick={handleCloseButtonClick}
+              onClick={handleMenuClose}
               color={theme.fontColorPrimary}
             />
           </Offcanvas.Header>
