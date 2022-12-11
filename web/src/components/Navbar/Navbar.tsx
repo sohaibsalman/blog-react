@@ -1,16 +1,20 @@
-import { useRef } from "react";
+import { useRef, useContext } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Offcanvas from "react-bootstrap/Offcanvas";
 
+import ThemeContext from "../../context/theme";
 import CloseButton from "../CloseButton";
 
 import "./navbar.css";
 import { config } from "../../config/navbar.config";
 
 const AppNavbar = () => {
+  const theme = useContext(ThemeContext);
+
   const closeBtnRef = useRef<HTMLDivElement>(null);
+
   const brand = Object.hasOwn(config.brand, "render")
     ? config.brand.render()
     : config.brand.name;
@@ -19,7 +23,7 @@ const AppNavbar = () => {
     <Nav.Link
       key={link.route}
       href={link.route}
-      style={{ color: config.fontColor }}
+      style={{ color: theme.fontColorPrimary }}
     >
       {link.label}
     </Nav.Link>
@@ -40,10 +44,10 @@ const AppNavbar = () => {
     <Navbar
       expand={"lg"}
       className="mb-3"
-      style={{ backgroundColor: config.backgroundColor }}
+      style={{ backgroundColor: theme.colorPrimary }}
     >
       <Container fluid>
-        <Navbar.Brand href="#" style={{ color: config.fontColor }}>
+        <Navbar.Brand href="#" style={{ color: theme.fontColorPrimary }}>
           {brand}
         </Navbar.Brand>
         <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-lg`}>
@@ -53,12 +57,12 @@ const AppNavbar = () => {
           id={`offcanvasNavbar-expand-lg`}
           aria-labelledby={`offcanvasNavbarLabel-expand-lg`}
           placement="end"
-          style={{ backgroundColor: config.backgroundColor }}
+          style={{ backgroundColor: theme.colorPrimary }}
         >
           <Offcanvas.Header closeButton ref={closeBtnRef}>
             <CloseButton
               onClick={handleCloseButtonClick}
-              color={config.fontColor}
+              color={theme.fontColorPrimary}
             />
           </Offcanvas.Header>
           <Offcanvas.Body>

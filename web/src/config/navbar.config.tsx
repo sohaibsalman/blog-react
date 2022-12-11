@@ -1,8 +1,6 @@
-import { config as stylesConfig } from "./styles.config";
+import ToggleButton from "../components/ToggleButton/ToggleButton";
 
 const config = {
-  backgroundColor: stylesConfig.colorPrimary,
-  fontColor: stylesConfig.colorFontPrimary,
   brand: {
     name: "Sohaib Salman",
     render: () => {
@@ -31,24 +29,7 @@ const config = {
       route: "/contact",
     },
   ],
-  toggleButton: () => {
-    return (
-      <div className="hamburger">
-        <span
-          className="bar"
-          style={{ backgroundColor: stylesConfig.colorFontPrimary }}
-        ></span>
-        <span
-          className="bar"
-          style={{ backgroundColor: stylesConfig.colorFontPrimary }}
-        ></span>
-        <span
-          className="bar"
-          style={{ backgroundColor: stylesConfig.colorFontPrimary }}
-        ></span>
-      </div>
-    );
-  },
+  toggleButton: () => <ToggleButton />,
 };
 
 export { config };
