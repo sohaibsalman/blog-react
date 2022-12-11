@@ -1,15 +1,20 @@
 import React, { createContext, ReactNode } from "react";
 
-import { config as theme } from "../config/theme.config";
+import { config } from "../config/theme.config";
+import { IThemeMode } from "../interfaces/ITheme";
 
-const ThemeContext = createContext(theme.dark);
+const ThemeContext = createContext(config.dark);
 
 interface IProps {
   children: ReactNode;
 }
 
 const Provider: React.FC<IProps> = ({ children }) => {
-  const valuesToShare = theme.dark;
+  let valuesToShare: IThemeMode;
+
+  if (config.default === "dark") valuesToShare = config.dark;
+  else valuesToShare = config.light;
+
   return (
     <ThemeContext.Provider value={valuesToShare}>
       {children}
