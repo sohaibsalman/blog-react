@@ -1,6 +1,8 @@
+import { config as stylesConfig } from "./styles.config";
+
 const config = {
-  backgroundColor: "black",
-  fontColor: "white",
+  backgroundColor: stylesConfig.colorPrimary,
+  fontColor: stylesConfig.colorFontPrimary,
   brand: {
     name: "Sohaib Salman",
     render: () => {
@@ -34,19 +36,19 @@ const config = {
       <div className="hamburger">
         <span
           className="bar"
-          style={{ backgroundColor: config.fontColor }}
+          style={{ backgroundColor: stylesConfig.colorFontPrimary }}
         ></span>
         <span
           className="bar"
-          style={{ backgroundColor: config.fontColor }}
+          style={{ backgroundColor: stylesConfig.colorFontPrimary }}
         ></span>
         <span
           className="bar"
-          style={{ backgroundColor: config.fontColor }}
+          style={{ backgroundColor: stylesConfig.colorFontPrimary }}
         ></span>
       </div>
     );
   },
 };
 
-export default config;
+export { config };

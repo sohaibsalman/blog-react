@@ -7,7 +7,7 @@ import Offcanvas from "react-bootstrap/Offcanvas";
 import CloseButton from "../CloseButton";
 
 import "./navbar.css";
-import config from "../../config/navbar.config";
+import { config } from "../../config/navbar.config";
 
 const AppNavbar = () => {
   const closeBtnRef = useRef<HTMLDivElement>(null);

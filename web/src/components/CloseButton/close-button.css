@@ -1,3 +1,13 @@
+.close-button {
+  border: none;
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: inherit;
+}
 .close-bar {
   position: absolute;
   width: 25px;
@@ -10,14 +20,4 @@
 
 .close-bar:nth-child(2) {
   transform: rotate(135deg);
-}
-
-.close-button {
-  width: 25px;
-  height: 25px;
-  margin-right: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: inherit;
 }
