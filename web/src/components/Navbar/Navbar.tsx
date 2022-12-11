@@ -1,17 +1,17 @@
-import { useRef, useContext } from "react";
+import { useRef } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Offcanvas from "react-bootstrap/Offcanvas";
 
-import ThemeContext from "../../context/theme";
 import CloseButton from "../CloseButton";
-
-import "./navbar.css";
+import useThemeContext from "../../hooks/use-theme-context";
 import { config } from "../../config/navbar.config";
 
+import "./navbar.css";
+
 const AppNavbar = () => {
-  const theme = useContext(ThemeContext);
+  const theme = useThemeContext();
 
   const closeBtnRef = useRef<HTMLDivElement>(null);
 

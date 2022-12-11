@@ -1,9 +1,7 @@
-import { useContext } from "react";
-
-import ThemeContext from "../../context/theme";
+import useThemeContext from "../../hooks/use-theme-context";
 
 const ToggleButton = () => {
-  const theme = useContext(ThemeContext);
+  const theme = useThemeContext();
   return (
     <div className="hamburger">
       <span

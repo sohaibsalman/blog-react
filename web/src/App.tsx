@@ -1,13 +1,13 @@
-import { useEffect, useContext } from "react";
+import { useEffect } from "react";
 
 import { Navbar } from "./components/Navbar";
 import { usePageTitle } from "./hooks/usePageTitle";
-import ThemeContext from "./context/theme";
+import useThemeContext from "./hooks/use-theme-context";
 
 import { config as globalConfig } from "./config/global.config";
 
 const App: React.FC = () => {
-  const theme = useContext(ThemeContext);
+  const theme = useThemeContext();
 
   usePageTitle(globalConfig.siteTitle);
 
