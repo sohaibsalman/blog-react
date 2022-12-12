@@ -42,7 +42,7 @@ const AppNavbar = () => {
   return (
     <Navbar
       expand={"lg"}
-      className="mb-3"
+      className="fixed-top mb-3"
       style={{ backgroundColor: theme.colorPrimary }}
     >
       <Container fluid>

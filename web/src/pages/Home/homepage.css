@@ -1,0 +1,18 @@
+.home-main {
+  padding-top: 8%;
+}
+
+.picture {
+  border-radius: 40px;
+  align-self: center;
+}
+
+@media screen and (max-width: 992px) {
+  .picture {
+    max-width: 70%;
+  }
+
+  .home-main-content {
+    margin-top: 60px;
+  }
+}
