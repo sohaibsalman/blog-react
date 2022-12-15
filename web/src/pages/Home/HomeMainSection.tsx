@@ -8,7 +8,7 @@ const HomeMainSection: React.FC<IProps> = ({ config }) => {
   const flexClasses = "d-flex flex-column justify-content-center";
 
   return (
-    <div className="home-main">
+    <section className="home-main-section">
       <div className="row">
         <div className={`home-main-image col-lg-4 order-lg-2 ${flexClasses}`}>
           <img
@@ -24,7 +24,7 @@ const HomeMainSection: React.FC<IProps> = ({ config }) => {
           <Text className="mt-4">{config.bio}</Text>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

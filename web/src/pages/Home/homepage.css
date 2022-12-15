@@ -1,4 +1,4 @@
-.home-main {
+.home-main-section {
   padding-top: 8%;
 }
 
@@ -7,12 +7,15 @@
   align-self: center;
 }
 
+.home-experience-section {
+  margin-top: 150px;
+}
 @media screen and (max-width: 992px) {
   .picture {
-    max-width: 70%;
+    max-width: 60%;
   }
 
   .home-main-content {
-    margin-top: 60px;
+    margin-top: 80px;
   }
 }
