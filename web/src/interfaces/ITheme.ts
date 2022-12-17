@@ -8,6 +8,7 @@ interface IThemeMode {
   colorPrimary: string;
   colorPrimaryDark: string;
   fontColorPrimary: string;
+  fontColorSecondary: string;
 }
 
 export type { ITheme, IThemeMode };

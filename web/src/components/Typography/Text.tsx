@@ -9,7 +9,7 @@ interface IProps {
 
 const Text: React.FC<IProps> = ({ children, ...rest }) => {
   const theme = useThemeContext();
-  const color = theme.fontColorPrimary;
+  const color = theme.fontColorSecondary;
 
   return (
     <p style={{ color }} {...rest}>

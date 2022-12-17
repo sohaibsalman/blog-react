@@ -5,12 +5,14 @@ const config: ITheme = {
   dark: {
     colorPrimary: "#161b22",
     colorPrimaryDark: "#0d1117",
-    fontColorPrimary: "white",
+    fontColorPrimary: "#e2e8f0",
+    fontColorSecondary: "#cbd5e1",
   },
   light: {
     colorPrimary: "white",
     colorPrimaryDark: "white",
     fontColorPrimary: "black",
+    fontColorSecondary: "#cbd5e1",
   },
 };
 
