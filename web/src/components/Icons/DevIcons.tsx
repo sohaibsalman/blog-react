@@ -19,7 +19,7 @@ const Icons = {
   java: <SimpleIcons.SiJava size={SIZE} />,
   mongodb: <SimpleIcons.SiMongodb size={SIZE} />,
   mysql: <DevIcons.DiMysql size={SIZE} />,
-  sqlserver: <SimpleIcons.SiMicrosoftsqlserver size={SIZE} />,
+  sqlServer: <SimpleIcons.SiMicrosoftsqlserver size={SIZE} />,
   android: <DevIcons.DiAndroid size={SIZE} />,
   cpp: <SimpleIcons.SiCplusplus size={SIZE} />,
   cSharp: <SimpleIcons.SiCsharp size={SIZE} />,
@@ -27,6 +27,10 @@ const Icons = {
   git: <SimpleIcons.SiGit size={SIZE} />,
   github: <SimpleIcons.SiGithub size={SIZE} />,
   gitlab: <SimpleIcons.SiGitlab size={SIZE} />,
+  nestjs: <SimpleIcons.SiNestjs size={SIZE} />,
+  postgreSql: <SimpleIcons.SiPostgresql size={SIZE} />,
+  docker: <SimpleIcons.SiDocker size={SIZE} />,
+  kubernetes: <SimpleIcons.SiKubernetes size={SIZE} />,
 };
 
 export { Icons };

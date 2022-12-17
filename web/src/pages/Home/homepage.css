@@ -7,8 +7,16 @@
   align-self: center;
 }
 
-.home-experience-section {
-  margin-top: 150px;
+.skill-container {
+  padding: 15px 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+}
+
+.skill-icon {
+  display: inline-block;
+  margin-top: 15px;
+  margin-right: 12px;
 }
 @media screen and (max-width: 992px) {
   .picture {
