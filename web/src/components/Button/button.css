@@ -1,0 +1,8 @@
+.button {
+  display: inline-block;
+  padding: 10px 25px;
+  font-size: 18px;
+  font-weight: 500;
+  border: 2px transparent;
+  animation: all 3s ease;
+}
