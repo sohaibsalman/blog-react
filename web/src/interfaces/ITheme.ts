@@ -7,6 +7,7 @@ interface ITheme {
 interface IThemeMode {
   colorPrimary: string;
   colorPrimaryDark: string;
+  colorSecondary: string;
   fontColorPrimary: string;
   fontColorSecondary: string;
 }
