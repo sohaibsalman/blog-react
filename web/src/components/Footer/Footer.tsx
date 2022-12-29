@@ -26,7 +26,7 @@ const Footer = () => {
       className="section-footer d-flex align-items-center flex-column"
       style={{ background: theme.colorPrimary }}
     >
-      <div className="footer-content">
+      <div className="footer-content text-center">
         <Text>{config.credits}</Text>
       </div>
       <div className="footer-icons d-flex mt-3">{renderedSocialLinks}</div>
