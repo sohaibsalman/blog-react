@@ -35,6 +35,17 @@ const AppNavbar = () => {
     </Nav.Link>
   ));
 
+  const renderedSocialLinks = config.socialLinks.map((link) => (
+    <Nav.Link
+      key={link.label}
+      href={link.route}
+      target="_blank"
+      style={{ color: theme.fontColorPrimary, fontSize: 24 }}
+    >
+      {link.icon}
+    </Nav.Link>
+  ));
+
   const toggleButton = Object.hasOwn(config, "toggleButton")
     ? config.toggleButton()
     : null;
@@ -46,7 +57,11 @@ const AppNavbar = () => {
       style={{ backgroundColor: theme.colorPrimary }}
     >
       <Container fluid>
-        <Navbar.Brand href="#" style={{ color: theme.fontColorPrimary }}>
+        <Navbar.Brand
+          as={NavLink}
+          to="/"
+          style={{ color: theme.fontColorPrimary }}
+        >
           {brand}
         </Navbar.Brand>
         <Navbar.Toggle
@@ -71,8 +86,8 @@ const AppNavbar = () => {
             />
           </Offcanvas.Header>
           <Offcanvas.Body>
-            <Nav className="justify-content-end flex-grow-1 pe-3">
-              {renderedLinks}
+            <Nav className="justify-content-end flex-grow-1 pe-3 align-items-baseline">
+              {[...renderedLinks, ...renderedSocialLinks]}
             </Nav>
           </Offcanvas.Body>
         </Navbar.Offcanvas>
